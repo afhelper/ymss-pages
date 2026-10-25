@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111111">
+  <meta name="description" content="단가와 이름으로 검색하는 시그니처 목록">
+  <title>시그 리스트</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1 class="sr-only">시그 리스트</h1>
+    <nav class="toolbar" aria-label="목록 필터">
+      <div class="filters" role="group" aria-label="시그니처 종류">
+        <button type="button" data-kind="all" class="active" aria-pressed="true"><svg class="button-icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 3v18M3 12h18"/></svg>전체</button>
+        <button type="button" data-kind="new" aria-pressed="false">★ 신규</button>
+      </div>
+      <div class="filters" role="group" aria-label="표시 단가 범위">
+        <button type="button" data-price="0:10000" aria-pressed="false">1만 미만</button>
+        <button type="button" data-price="10000:50000" aria-pressed="false">1만~5만</button>
+        <button type="button" data-price="50000:100000" aria-pressed="false">5만~10만</button>
+        <button type="button" data-price="100000:200000" aria-pressed="false">10만~20만</button>
+        <button type="button" data-price="200000:Infinity" aria-pressed="false">20만 이상</button>
+      </div>
+    </nav>
+    <label class="search-wrap" for="search"><svg aria-hidden="true" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10.5" cy="10.5" r="7.5"/><path d="m16 16 6 6"/></svg><span class="sr-only">제목, 별칭 또는 단가 검색</span><input id="search" type="search" placeholder="시그니처 검색" autocomplete="off"></label>
+    <section id="rows" class="grid" aria-label="시그니처 검색 결과" aria-busy="true"><p class="message">목록을 불러오고 있습니다.</p></section>
+    <footer><span>ymss.kr</span></footer>
+  </main>
+</body>
+</html>
